@@ -1,0 +1,1846 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.0 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.9.9.28:0.0                             ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 28/08/2023 ? ? 16:37.32 ? ? /home/mobaxterm ? ssh ubuntu@172.16.5.172
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.4.0-126-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Aug 28 11:08:29 UTC 2023
+
+  System load:                      0.2
+  Usage of /:                       25.5% of 77.35GB
+  Memory usage:                     38%
+  Swap usage:                       0%
+  Processes:                        466
+  Users logged in:                  0
+  IPv4 address for br-8f6fd981fbf8: 172.22.0.1
+  IPv4 address for docker0:         172.17.0.1
+  IPv4 address for ens3:            172.16.5.172
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+71 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+*** System restart required ***
+                                        _       _                _                 _
+               __      ____ ___   _____| | __ _| |__  ___    ___| | ___  _   _  __| |
+               \ \ /\ / / _` \ \ / / _ \ |/ _` | '_ \/ __|  / __| |/ _ \| | | |/ _` |
+                \ V  V / (_| |\ V /  __/ | (_| | |_) \__ \ | (__| | (_) | |_| | (_| |
+                 \_/\_/ \__,_| \_/ \___|_|\__,_|_.__/|___/  \___|_|\___/ \__,_|\__,_|
+
+
+
+Last login: Mon Aug 28 06:48:45 2023 from 10.9.9.28
+ubuntu@athira-docker:~$
+ubuntu@athira-docker:~$
+ubuntu@athira-docker:~$ ls
+IMS
+ubuntu@athira-docker:~$ mkdir seagull
+ubuntu@athira-docker:~$ cd seagull/
+ubuntu@athira-docker:~/seagull$
+ubuntu@athira-docker:~/seagull$
+ubuntu@athira-docker:~/seagull$
+ubuntu@athira-docker:~/seagull$ git clone https://github.com/codeghar/Seagull.git
+Cloning into 'Seagull'...
+remote: Enumerating objects: 4982, done.
+remote: Total 4982 (delta 0), reused 0 (delta 0), pack-reused 4982
+Receiving objects: 100% (4982/4982), 9.43 MiB | 2.82 MiB/s, done.
+Resolving deltas: 100% (2400/2400), done.
+ubuntu@athira-docker:~/seagull$ ls
+Seagull
+ubuntu@athira-docker:~/seagull$ cd Seagull/
+ubuntu@athira-docker:~/seagull/Seagull$ ls
+CONTRIBUTING.rst  LICENSE  README.md  doc  docker  investigation.rst  seagull
+ubuntu@athira-docker:~/seagull/Seagull$ cd docker/
+ubuntu@athira-docker:~/seagull/Seagull/docker$ ls
+README.md  centos-7  ubuntu-16.04  ubuntu-18.04
+ubuntu@athira-docker:~/seagull/Seagull/docker$ cd ubuntu-18.04/
+ubuntu@athira-docker:~/seagull/Seagull/docker/ubuntu-18.04$ ls
+Dockerfile  Makefile
+ubuntu@athira-docker:~/seagull/Seagull/docker/ubuntu-18.04$ mv Dockerfile Dockerfile_bckup
+ubuntu@athira-docker:~/seagull/Seagull/docker/ubuntu-18.04$ mv Makefile Makefile_bckup
+ubuntu@athira-docker:~/seagull/Seagull/docker/ubuntu-18.04$ sudo vi Dockerfile
+ubuntu@athira-docker:~/seagull/Seagull/docker/ubuntu-18.04$ sudo vi Makefile
+ubuntu@athira-docker:~/seagull/Seagull/docker/ubuntu-18.04$ makesudo su
+makesudo: command not found
+ubuntu@athira-docker:~/seagull/Seagull/docker/ubuntu-18.04$ sudo su
+root@athira-docker:/home/ubuntu/seagull/Seagull/docker/ubuntu-18.04# make build
+docker build -t localhost/seagull:ubuntu1804 .
+[+] Building 367.8s (16/16) FINISHED                                                                                      docker:default
+ => [internal] load build definition from Dockerfile                                                                                0.0s
+ => => transferring dockerfile: 1.41kB                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                   0.0s
+ => => transferring context: 2B                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:18.04                                                                     3.0s
+ => [ 1/12] FROM docker.io/library/ubuntu:18.04@sha256:152dc042452c496007f07ca9127571cb9c29697f42acbfad72324b2bb2e43c98             4.6s
+ => => resolve docker.io/library/ubuntu:18.04@sha256:152dc042452c496007f07ca9127571cb9c29697f42acbfad72324b2bb2e43c98               0.0s
+ => => sha256:152dc042452c496007f07ca9127571cb9c29697f42acbfad72324b2bb2e43c98 1.33kB / 1.33kB                                      0.0s
+ => => sha256:dca176c9663a7ba4c1f0e710986f5a25e672842963d95b960191e2d9f7185ebe 424B / 424B                                          0.0s
+ => => sha256:f9a80a55f492e823bf5d51f1bd5f87ea3eed1cb31788686aa99a2fb61a27af6a 2.30kB / 2.30kB                                      0.0s
+ => => sha256:7c457f213c7634afb95a0fb2410a74b7b5bc0ba527033362c240c7a11bef4331 25.69MB / 25.69MB                                    3.4s
+ => => extracting sha256:7c457f213c7634afb95a0fb2410a74b7b5bc0ba527033362c240c7a11bef4331                                           1.0s
+ => [ 2/12] RUN apt-get update                                                                                                      8.8s
+ => [ 3/12] RUN apt-get -y install build-essential curl git libglib2.0-dev ksh bison flex vim tmux                                 72.3s
+ => [ 4/12] RUN mkdir -p ~/opt/src                                                                                                  0.4s
+ => [ 5/12] RUN git clone https://github.com/codeghar/Seagull.git ~/opt/src/seagull &&  cd ~/opt/src/seagull &&  git branch build   5.5s
+ => [ 6/12] RUN cd ~/opt/src/seagull/seagull/trunk/src &&  curl --create-dirs -L -o ~/opt/src/seagull/seagull/trunk/src/external-l  6.0s
+ => [ 7/12] RUN cd ~/opt/src/seagull/seagull/trunk/src &&  curl --create-dirs -L -o ~/opt/src/seagull/seagull/trunk/src/external  200.7s
+ => [ 8/12] RUN cd ~/opt/src/seagull/seagull/trunk/src &&  ksh build.ksh -target clean &&  ksh build.ksh -target all               61.9s
+ => [ 9/12] RUN cp ~/opt/src/seagull/seagull/trunk/src/bin/* /usr/local/bin                                                         0.5s
+ => [10/12] RUN mkdir -p /opt/seagull &&  cp -r ~/opt/src/seagull/seagull/trunk/src/exe-env/* /opt/seagull                          0.3s
+ => [11/12] RUN [ "/bin/bash", "-c", "mkdir -p /opt/seagull/{diameter-env,h248-env,http-env,msrp-env,octcap-env,radius-env,sip-env  0.3s
+ => [12/12] WORKDIR /opt/seagull                                                                                                    0.0s
+ => exporting to image                                                                                                              3.3s
+ => => exporting layers                                                                                                             3.3s
+ => => writing image sha256:6f4eaa4a041fc797c9be23aa6ee3957ba8de18156fb991537a8312365075eee4                                        0.0s
+ => => naming to localhost/seagull:ubuntu1804                                                                                       0.0s
+root@athira-docker:/home/ubuntu/seagull/Seagull/docker/ubuntu-18.04# make run
+docker run -i -t --rm --detach --name seagull-ubuntu1804 localhost/seagull:ubuntu1804 /bin/bash || :
+5bd59ece0a8f8ea1cb9d496e5a14b37451f5b7cce9e81f9f6ad1c99b4512f512
+root@athira-docker:/home/ubuntu/seagull/Seagull/docker/ubuntu-18.04# make exec
+docker exec -it seagull-ubuntu1804 /bin/bash
+root@5bd59ece0a8f:/opt/seagull# ls
+diameter-env  h248-env  http-env  msrp-env  octcap-env  radius-env  sip-env  synchro-env  xcap-env
+root@5bd59ece0a8f:/opt/seagull# cd diameter-env/
+root@5bd59ece0a8f:/opt/seagull/diameter-env# ls
+config  logs  run  scenario
+root@5bd59ece0a8f:/opt/seagull/diameter-env# cd run
+root@5bd59ece0a8f:/opt/seagull/diameter-env/run# ls
+start_client.ksh      start_client_sh.ksh             start_server.ksh      start_server_sh.ksh
+start_client_cc.ksh   start_client_tls.ksh            start_server_cc.ksh   start_server_tls.ksh
+start_client_s6a.ksh  start_client_tls_no_secure.ksh  start_server_s6a.ksh  start_server_tls_no_secure.ksh
+root@5bd59ece0a8f:/opt/seagull/diameter-env/run# ./start_server.ksh
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:22 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:00:001              | 00:00:00:001            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:23 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:01:001            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:24 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:02:001            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:25 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:03:003            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:26 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:04:004            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:27 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:05:005            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:28 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:06:005            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:29 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:07:006            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:30 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:08:006            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:31 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:09:006            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:32 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:10:008            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:33 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:11:009            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:34 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:12:013            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:35 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:13:013            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:36 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:14:017            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:37 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:15:022            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:38 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:16:024            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:39 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:17:024            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:40 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:18:024            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:41 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:19:024            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:42 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:20:025            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:43 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:21:025            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:44 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:22:025            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:45 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:23:025            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:46 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:24:026            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:47 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:25:026            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:48 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:26:027            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:49 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:27:027            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:50 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:28:027            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:51 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:29:027            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:52 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:30:028            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:53 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:31:028            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:54 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:32:028            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:55 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:33:029            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:56 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:34:031            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:57 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:35:032            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:58 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:36:035            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:25:59 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:37:035            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:00 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:38:036            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:01 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:39:036            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:02 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:40:039            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:03 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:41:042            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:04 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:42:044            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:05 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:43:044            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:06 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:44:048            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:07 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:45:048            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:08 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:46:050            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:09 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:47:051            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:10 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:48:053            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:11 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:49:053            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:12 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:50:055            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:13 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:51:056            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:14 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:52:056            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:15 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:53:057            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:16 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:54:058            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:17 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:55:059            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:18 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:56:059            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:19 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:57:059            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:20 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:58:059            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:21 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:00:59:059            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:22 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:01:00:059            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:23 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:01:01:060            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:24 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:01:02:061            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:25 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:01:03:061            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:26 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:01:04:061            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:27 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:01:05:062            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:28 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:01:06:062            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:29 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:01:07:062            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:30 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:01:08:063            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:31 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:01:000              | 00:01:09:063            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Incomming traffic                                   |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+|------------------------+---------------------------+-------------------------|
+| Start/Current Time     |       2023-08-28 11:25:22 |     2023-08-28 11:26:31 |
+|------------------------+---------------------------+-------------------------|
+|    Counter Name        |      Periodic value       |     Cumulative value    |
+|------------------------+---------------------------+-------------------------|
+| Elapsed Time           | 00:00:00:056              | 00:01:09:120            |
+| Call rate (/s)         |    0.000                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Incoming calls         |        0                  |        0                |
+| Outgoing calls         |        0                  |        0                |
+| Msg Recv/s             |    0.000                  |    0.000                |
+| Msg Sent/s             |    0.000                  |    0.000                |
+| Unexpected msg         |        0                  |        0                |
+| Current calls          |        0                  |    0.000                |
+|------------------------+---------------------------+-------------------------|
+| Successful calls       |        0                  |        0                |
+| Failed calls           |        0                  |        0                |
+| Refused calls          |        0                  |        0                |
+| Aborted calls          |        0                  |        0                |
+| Timeout calls          |        0                  |        0                |
+|------------------------+---------------------------+-------------------------|
+| Last Info              | Stopping traffic                                    |
+| Last Error             | No error                                            |
+|--- Next screen : Press key 1 ----------------------- [h]: Display help ------|
+root@5bd59ece0a8f:/opt/seagull/diameter-env/run# ls
+start_client.ksh      start_client_sh.ksh             start_server.ksh      start_server_sh.ksh
+start_client_cc.ksh   start_client_tls.ksh            start_server_cc.ksh   start_server_tls.ksh
+start_client_s6a.ksh  start_client_tls_no_secure.ksh  start_server_s6a.ksh  start_server_tls_no_secure.ksh
+root@5bd59ece0a8f:/opt/seagull/diameter-env/run# vi start_server.ksh
+root@5bd59ece0a8f:/opt/seagull/diameter-env/run# ^C
+root@5bd59ece0a8f:/opt/seagull/diameter-env/run# ./start_server.ksh
