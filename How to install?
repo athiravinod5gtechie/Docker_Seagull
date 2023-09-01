@@ -1,0 +1,11 @@
+After Cloning the repository  https://github.com/codeghar/Seagull.git, Please execute the following commands. The expected output is attached to this repo for your reference.
+$ make build
+$ make run
+$ make exec
+$ make stop
+
+Check whether all these files are present in /opt/seagull 
+diameter-env h248-env http-env msrp-env octcap-env radius-env sip-env synchro-env xcap-env
+
+Default Usage
+root@(host) :/opt/seagull/diameter-env/run# ./start_server.ksh
